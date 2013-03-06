@@ -1,4 +1,6 @@
 armonico
 ========
 
-Armonico Theme
+armonico
+
+test

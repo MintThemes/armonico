@@ -1,0 +1,20 @@
+=== armonico ===
+Version 2.0.0.6 - March 4, 2013
+WooCommerce 2.0 Update
+
+Version 2.5 - February 13, 2013
+if ( !function_exists( 'aq_resize' ) ){
+
+Version 2.4 - December 30, 2012
+mintthemes_isotopes to moveplugins_isotopes
+
+Version 2.3 - December 17, 2012
+Added EDD 
+
+Version 2.2 - December 16, 2012
+Fixed navigation classes in style.css
+
+Version 2.1 - December 15, 2012
+Removed height 100% from style.css on line 2119
+
+Version 2.0 - December 11, 2012
