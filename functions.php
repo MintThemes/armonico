@@ -297,7 +297,7 @@ function armonico_wc_check_notice() {
  *
  */
 function armonico_isotopes_check() {
-	if ( ! in_array( 'isotopes/isotopes.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+	if ( ! in_array( 'mp-isotopes/mp-isotopes.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 		add_action( 'admin_notices', 'armonico_isotopes_check_notice' );
 	}
 }
