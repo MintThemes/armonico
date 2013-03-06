@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.0.7 - March 6, 2013
+Isotopes notice update
+
 Version 2.0.0.6 - March 4, 2013
 WooCommerce 2.0 Update
 
