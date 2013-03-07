@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.1.0 - March 7, 2013
+mp_aq to aq
+
 Version 2.0.0.9 - March 7, 2013
 AQ Resizer Update
 
