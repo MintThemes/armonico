@@ -37,7 +37,7 @@ get_header(); ?>
 							$thumb = get_post_thumbnail_id();
 							$img_url = wp_get_attachment_url( $thumb,'full'); //get img URL
 						?>
-                        <li><a href="<?php the_permalink(); ?>"><img src="<?php echo aq_resize( $img_url, 692, 383, true );  ?>" alt="<?php the_title(); ?>" /></a></li>
+                        <li><a href="<?php the_permalink(); ?>"><img src="<?php echo aq_resize( $img_url, 692, 383, true );  ?>" width="692px" height="383px" alt="<?php the_title(); ?>" /></a></li>
                     <?php endwhile; ?>
                     </ul>
             </div>

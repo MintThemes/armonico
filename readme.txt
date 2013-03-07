@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.0.9 - March 7, 2013
+AQ Resizer Update
+
 Version 2.0.0.8 - March 7, 2013
 More WooCommerce updates - pagination etc
 
