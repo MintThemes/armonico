@@ -1371,3 +1371,6 @@ ul.digital-downloads li .count {
 .widget_price_filter .ui-slider-horizontal .ui-slider-range-max {
     right: -1px;
 }
+.woocommerce-result-count, .woocommerce-ordering, .woocommerce-pagination{
+	display:none;
+}	
