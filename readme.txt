@@ -1,5 +1,5 @@
 === armonico ===
-Version 2.0.1.0 - March 11, 2013
+Version 2.0.1.1 - March 11, 2013
 Added css for submenus of submenus
 
 Version 2.0.1.0 - March 7, 2013
