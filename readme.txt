@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.1.2 - March 31, 2013
+Fixed Responsive Slider with height:100%
+
 Version 2.0.1.1 - March 11, 2013
 Added css for submenus of submenus
 
