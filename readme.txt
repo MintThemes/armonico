@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.1.3 - April 2, 2013
+Removed height:100% and instead removed image hardcoded height in homepage template
+
 Version 2.0.1.2 - March 31, 2013
 Fixed Responsive Slider with height:100%
 
