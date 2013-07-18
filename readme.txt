@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.1.4 - July 18, 2013
+Changed max-width on style.css to be 1024
+
 Version 2.0.1.3 - April 2, 2013
 Removed height:100% and instead removed image hardcoded height in homepage template
 
