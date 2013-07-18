@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.1.5 - July 18, 2013
+Removed reference to isotope - which is now handled by the mp-isotopes plugin
+
 Version 2.0.1.4 - July 18, 2013
 Changed max-width on style.css to be 1024
 
