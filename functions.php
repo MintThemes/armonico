@@ -149,7 +149,7 @@ if ( ! function_exists( 'armonico_scripts' ) ):
 		
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array( 'jquery' ) );
-		wp_enqueue_script( 'armonico', get_template_directory_uri() . '/js/scripts.js', array( 'isotope', 'flexslider' ) );
+		wp_enqueue_script( 'armonico', get_template_directory_uri() . '/js/scripts.js', array( 'flexslider' ) );
 		wp_enqueue_script( 'mintthemes-select', get_template_directory_uri() . '/js/selectBox.min.js', array( 'jquery' ) );
 		
 		//woocommerce stuff used for edd as well

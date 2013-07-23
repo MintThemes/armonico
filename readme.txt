@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.1.6 - July 22, 2013
+Removed the requirement of "isotope" before scripts.js loads.
+
 Version 2.0.1.5 - July 18, 2013
 Removed reference to isotope - which is now handled by the mp-isotopes plugin
 
