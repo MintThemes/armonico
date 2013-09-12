@@ -34,6 +34,10 @@ if ( !function_exists( 'aq_resize' ) ){
 		$upload_dir = $upload_info['basedir'];
 		$upload_url = $upload_info['baseurl'];
 		
+		if ( is_ssl() ) {
+			$upload_url = str_replace( 'http://', 'https://', $upload_url );
+		}
+		
 		//check if $img_url is local
 		if(strpos( $url, $upload_url ) === false) return false;
 		
@@ -53,6 +57,46 @@ if ( !function_exists( 'aq_resize' ) ){
 		if ($aq_width > ($orig_w) || $aq_height > ($orig_h)){	
 			$aq_width = $width;
 			$aq_height = $height;
+			
+			//If the original width and height of the image are not larger than the passed-in values, find the lowest common denominator and create a cropped image at the same ratio
+			if ($aq_width > ($orig_w) || $aq_height > ($orig_h)){	
+			
+				//If the width is greater than the height
+				if ( $aq_width > $aq_height ){
+					
+					//Find the lowest common denominator of width=? when height=1
+					$width_lcd = $aq_width / $aq_height;
+										
+					//Find the value for height
+					$adjusted_aq_height = $orig_w / $width_lcd;
+					
+					//Set the width to the actual width of the image						
+					$adjusted_aq_width = $orig_w;
+					
+					//If the height of the image is shorter than it needs to be with the width at actual size,
+					if ( $adjusted_aq_height > $orig_h ){
+						
+						//Find out how wide we can make this image without being too short on the height
+						
+						//Find the lowest common denominator of width=? when height=1
+						$height_lcd = $aq_height / $aq_width;
+											
+						//Find the value for width
+						$adjusted_aq_width = $orig_h / $height_lcd;
+						
+						//Set the width to the actual width of the image						
+						$adjusted_aq_height = $orig_h;
+						
+						
+					}
+						
+					$aq_width = $adjusted_aq_width;	
+					$aq_height = $adjusted_aq_height;	
+					
+								
+				}
+			
+			}
 		}
 		
 		//get image size after cropping
@@ -73,9 +117,9 @@ if ( !function_exists( 'aq_resize' ) ){
 			$dst_h = $orig_h;
 		}
 		//else check if cache exists
-		//elseif(file_exists($destfilename) && getimagesize($destfilename)) {
-			//$img_url = "{$upload_url}{$dst_rel_path}-{$suffix}.{$ext}";
-		//}
+		elseif(file_exists($destfilename) && getimagesize($destfilename)) {
+			$img_url = "{$upload_url}{$dst_rel_path}-{$suffix}.{$ext}";
+		}
 		//else, we resize the image and return the new resized image url
 		else {
 						

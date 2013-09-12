@@ -12,19 +12,36 @@ get_header(); ?>
 	<div id="main">
         <div class="gallery-holder">
 			<?php
-            $slideshow_args = array(
-                'post_type' => 'post',
-                'showposts' => 6,
-                'tax_query' => array(
-                    'relation' => 'AND',
-                    array(
-                        'taxonomy' => 'category',
-                        'field'    => 'id',
-                        'terms'    => array( armonico_get_theme_option( 'featured_category' ) ),
-                        'operator' => 'IN'
-                    )
-                )
-            );
+			if ( armonico_get_theme_option( 'slider_type' ) == '0' ){
+				$slideshow_args = array(
+					'post_type' => 'post',
+					'showposts' => 6,
+					'tax_query' => array(
+						'relation' => 'AND',
+						array(
+							'taxonomy' => 'category',
+							'field'    => 'id',
+							'terms'    => array( armonico_get_theme_option( 'slider_featured_post_category' ) ),
+							'operator' => 'IN'
+						)
+					)
+				);
+			}
+			if ( armonico_get_theme_option( 'slider_type' ) == '1' ){
+				$slideshow_args = array(
+					'post_type' => 'product',
+					'showposts' => 6,
+					'tax_query' => array(
+						'relation' => 'AND',
+						array(
+							'taxonomy' => 'product_cat',
+							'field'    => 'id',
+							'terms'    => array( armonico_get_theme_option( 'slider_featured_product_category' ) ),
+							'operator' => 'IN'
+						)
+					)
+				);
+			}
         
             $slideshow = new WP_Query( apply_filters( 'armonico_slideshow_args', $slideshow_args ) );
     

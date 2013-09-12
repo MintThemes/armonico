@@ -34,20 +34,52 @@ function armonico_theme_options_init() {
 		'__return_false',
 		'armonico_options'
 	);
-
+	
+	if (taxonomy_exists('product_cat')){
+		add_settings_field(
+			'slider_type',
+			__( 'Post or Product?', 'armonico' ), 
+			'armonico_settings_field_select',
+			'armonico_options',
+			'slider_settings',
+			array(
+				'name'        => 'slider_type',
+				'value'       => armonico_get_theme_option( 'slider_type' ),
+				'options'     => array('post','product'),
+				'description' => __( 'For the slider on the homepage, do you want to display products or posts?', 'armonico' )
+			)
+		);
+	}
+		
 	add_settings_field(
-		'featured_category',
-		__( 'Featured Slider Category', 'armonico' ), 
+		'slider_featured_post_category',
+		__( 'Featured Slider Post Category', 'armonico' ), 
 		'armonico_settings_field_select',
 		'armonico_options',
 		'slider_settings',
 		array(
-			'name'        => 'featured_category',
-			'value'       => armonico_get_theme_option( 'featured_category' ),
+			'name'        => 'slider_featured_post_category',
+			'value'       => armonico_get_theme_option( 'slider_featured_post_category' ),
 			'options'     => armonico_get_categories(),
-			'description' => __( 'Posts in this category will be used on the homepage&#39;s slider.', 'armonico' )
+			'description' => __( 'If using \"Posts\", Posts in this category will be used on the homepage&#39;s slider.', 'armonico' )
 		)
 	);
+	
+		
+	add_settings_field(
+		'slider_featured_product_category',
+		__( 'Featured Slider Product Category', 'armonico' ), 
+		'armonico_settings_field_select',
+		'armonico_options',
+		'slider_settings',
+		array(
+			'name'        => 'slider_featured_product_category',
+			'value'       => armonico_get_theme_option( 'slider_featured_product_category' ),
+			'options'     => armonico_get_product_cats(),
+			'description' => __( 'If using \"Products\", Products in this category will be used on the homepage&#39;s slider.', 'armonico' )
+		)
+	);
+	
 	//
 	add_settings_section(
 		'homepageposttype',
@@ -269,34 +301,22 @@ add_action( 'admin_menu', 'armonico_theme_options_add_page' );
 function armonico_get_theme_options() {
 	$saved = (array) get_option( 'armonico_options' );
 	
-	if (taxonomy_exists('product_cat')){
-		$defaults = array(
-			'featured_category'     => '',
-			'post_vs_product' 		=> '',
-			'featured_product_category' 	=> '',
-			'featured_post_category' 	=> '',
-			'twitter'      => '',
-			'facebook'		=> '',
-			'youtube'		=> '',
-			'home_slogan'			=> '',
-			'display_tagline'   => '',
-			'tagline_color'     => '',
-			'footer_color'      => ''
-		);
-	}else{
-		$defaults = array(
-			'featured_category'     => '',
-			'featured_post_category' 	=> '',
-			'twitter'      => '',
-			'facebook'		=> '',
-			'youtube'		=> '',
-			'home_slogan'			=> '',
-			'display_tagline'   => '',
-			'tagline_color'     => '',
-			'footer_color'      => ''
-		);
-	}
-
+	$defaults = array(
+		'slider_type'     => '',
+		'slider_featured_post_category'     => '',
+		'slider_featured_product_category'     => '',
+		'post_vs_product' 		=> '',
+		'featured_product_category' 	=> '',
+		'featured_post_category' 	=> '',
+		'twitter'      => '',
+		'facebook'		=> '',
+		'youtube'		=> '',
+		'home_slogan'			=> '',
+		'display_tagline'   => '',
+		'tagline_color'     => '',
+		'footer_color'      => ''
+	);
+	
 	$defaults = apply_filters( 'armonico_default_theme_options', $defaults );
 
 	$options = wp_parse_args( $saved, $defaults );
@@ -357,8 +377,16 @@ function armonico_theme_options_render_page() {
 function armonico_theme_options_validate( $input ) {
 	$output = array();
 	
-	if ( $input[ 'featured_category' ] == 0 || array_key_exists( $input[ 'featured_category' ], armonico_get_categories() ) )
-		$output[ 'featured_category' ] = $input[ 'featured_category' ];
+	if (taxonomy_exists('product_cat')){
+		if ( isset ( $input[ 'slider_type' ] ) )
+			$output[ 'slider_type' ] = esc_attr( $input[ 'slider_type' ] );
+	}
+	
+	if ( $input[ 'slider_featured_product_category' ] == 0 || array_key_exists( $input[ 'slider_featured_product_category' ], armonico_get_categories()+armonico_get_product_cats() ) )
+		$output[ 'slider_featured_product_category' ] = $input[ 'slider_featured_product_category' ];
+	//	
+	if ( $input[ 'slider_featured_post_category' ] == 0 || array_key_exists( $input[ 'slider_featured_post_category' ], armonico_get_categories()+armonico_get_product_cats() ) )
+		$output[ 'slider_featured_post_category' ] = $input[ 'slider_featured_post_category' ];
 	//	
 	if (taxonomy_exists('product_cat')){
 		if ( isset ( $input[ 'post_vs_product' ] ) )

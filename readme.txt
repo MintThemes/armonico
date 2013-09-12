@@ -1,4 +1,8 @@
 === armonico ===
+Version 2.0.1.7 - September 12, 2013
+Added ability for slider to be post OR product
+Updated aq_resizer
+
 Version 2.0.1.6 - July 22, 2013
 Removed the requirement of "isotope" before scripts.js loads.
 
