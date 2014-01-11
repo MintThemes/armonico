@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.1.9 - January 11, 2013
+Added translation string to inc/woocommerce.php functions
+
 Version 2.0.1.7 - September 12, 2013
 Added ability for slider to be post OR product
 Updated aq_resizer

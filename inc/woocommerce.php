@@ -35,7 +35,7 @@ function custom_add_to_cart_message() {
 	// Output success messages
 	$return_to 	= get_permalink(woocommerce_get_page_id('shop'));
 
-	$message 	= sprintf('<a href="%s" class="view view-cart">%s</a> %s', get_permalink(woocommerce_get_page_id('cart')), __('View Cart &rarr;', 'woocommerce'), __('Product successfully added to your cart.', 'woocommerce') );
+	$message 	= sprintf('<a href="%s" class="view view-cart">%s</a> %s', get_permalink(woocommerce_get_page_id('cart')), __('View Cart &rarr;', 'armonico'), __('Product successfully added to your cart.', 'armonico') );
 
 	return $message;
 }
