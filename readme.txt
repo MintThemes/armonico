@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.2.0 - February 27, 2014
+Fixed deprecated woo commerce functions for disabling styles
+
 Version 2.0.1.9 - January 11, 2013
 Added translation string to inc/woocommerce.php functions
 

@@ -3,4 +3,4 @@
  * Single Product Meta
  */
 
-$woocommerce->show_messages();
+//$woocommerce->show_messages();

@@ -43,7 +43,7 @@ function custom_add_to_cart_message() {
 /**
  * turn off all css styling from woocommerce
  **/
-define('WOOCOMMERCE_USE_CSS', false);
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 /**
  * load woocommerce styles from woocommerce stylesheet included in the theme's css folder
