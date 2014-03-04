@@ -12,6 +12,8 @@ get_header(); ?>
 	<div id="main">
         <div class="gallery-holder">
 			<?php
+			$slideshow_args  = NULL;
+			
 			if ( armonico_get_theme_option( 'slider_type' ) == '0' ){
 				$slideshow_args = array(
 					'post_type' => 'post',

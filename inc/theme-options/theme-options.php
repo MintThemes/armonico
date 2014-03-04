@@ -61,7 +61,7 @@ function armonico_theme_options_init() {
 			'name'        => 'slider_featured_post_category',
 			'value'       => armonico_get_theme_option( 'slider_featured_post_category' ),
 			'options'     => armonico_get_categories(),
-			'description' => __( 'If using \"Posts\", Posts in this category will be used on the homepage&#39;s slider.', 'armonico' )
+			'description' => __( 'If using "Posts", Posts in this category will be used on the homepage&#39;s slider.', 'armonico' )
 		)
 	);
 	
@@ -76,7 +76,7 @@ function armonico_theme_options_init() {
 			'name'        => 'slider_featured_product_category',
 			'value'       => armonico_get_theme_option( 'slider_featured_product_category' ),
 			'options'     => armonico_get_product_cats(),
-			'description' => __( 'If using \"Products\", Products in this category will be used on the homepage&#39;s slider.', 'armonico' )
+			'description' => __( 'If using "Products", Products in this category will be used on the homepage&#39;s slider.', 'armonico' )
 		)
 	);
 	

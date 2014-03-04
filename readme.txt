@@ -1,4 +1,7 @@
 === armonico ===
+Version 2.0.2.1 - March 3, 2014
+Added redundancy check for homepage slider var
+
 Version 2.0.2.0 - February 27, 2014
 Fixed deprecated woo commerce functions for disabling styles
 
