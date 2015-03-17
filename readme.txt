@@ -1,4 +1,11 @@
 === armonico ===
+
+Full Setup Instructions located here:
+http://mintthemes.com/armonico-set-up-instructions/
+
+Version 2.0.2.2 - March 17, 2015
+Added new link to set up instructions.
+
 Version 2.0.2.1 - March 3, 2014
 Added redundancy check for homepage slider var
 
@@ -49,7 +56,7 @@ Version 2.5 - February 13, 2013
 if ( !function_exists( 'aq_resize' ) ){
 
 Version 2.4 - December 30, 2012
-mintthemes_isotopes to moveplugins_isotopes
+mintthemes_isotopes to mintplugins_isotopes
 
 Version 2.3 - December 17, 2012
 Added EDD 

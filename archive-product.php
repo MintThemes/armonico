@@ -33,8 +33,8 @@ get_header(); ?>
             </div>
         </div>
         <div id="content">
-        	<?php if ( function_exists( 'moveplugins_isotopes' ) ): 
-					moveplugins_isotopes(); 
+        	<?php if ( function_exists( 'mintplugins_isotopes' ) ): 
+					mintplugins_isotopes(); 
 				endif; //armonico_isotopes
             ?>
             <div class="product-list">

@@ -70,8 +70,8 @@ get_header(); ?>
         
 			<?php 
 			
-				if ( function_exists( 'moveplugins_isotopes' ) ): 
-					moveplugins_isotopes(); 
+				if ( function_exists( 'mintplugins_isotopes' ) ): 
+					mintplugins_isotopes(); 
 				endif; //armonico_isotopes
 			
             ?>

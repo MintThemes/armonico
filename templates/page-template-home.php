@@ -74,7 +74,7 @@ get_header(); ?>
         	<div class="product-list">
         <?php } ?>
             <ul class="list">
-            <div class="moveplugins_isotopes_container">
+            <div class="mintplugins_isotopes_container">
 			
             <?php //woocommerce check - is woocommerce plugin installed? ?>
 			<?php if (  in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
